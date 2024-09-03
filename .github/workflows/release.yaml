@@ -7,7 +7,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     env:
-      VERSION: ${{ github.ref }}
+      VERSION: ${{ github.ref_name }}
     permissions:
       contents: write
     steps:
