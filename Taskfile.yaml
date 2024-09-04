@@ -1,0 +1,13 @@
+version: "3"
+
+tasks:
+  default:
+    desc: Display available tasks
+    cmds:
+      - task -l
+  minor-release:
+    desc: Create a minor release
+    cmds:
+      - git show tags
+      - git tag -a "v$(semver bump minor)" -m "Release v$(semver bump minor)"
+      - git push origin "v$(semver bump minor)"
