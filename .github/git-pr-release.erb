@@ -1,8 +1,6 @@
 Release <%= Time.now.strftime('%Y-%m-%d %H:%M') %>
-
 > [!CAUTION]
 > **Create Merge Commit** is recommended for merge this PR.
-
 <% enhancement_prs = pull_requests.select { |pr| pr.labels.include?('enhancement') } %>
 <% if enhancement_prs.any? %>
 ## 🚀 Enhancement
