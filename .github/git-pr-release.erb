@@ -5,20 +5,20 @@ Release <%= Time.now.strftime('%Y-%m-%d %H:%M') %>
 <% if enhancement_prs.any? %>
 ## 🚀 Enhancement
 <% enhancement_prs.each do |pr| -%>
-<%= pr.to_checklist_item %>
+- #<%= pr.number %> <%= pr.mention %>
 <% end -%>
 <% end %>
 <% bug_prs = pull_requests.select { |pr| pr.labels.include?('bug') } %>
 <% if bug_prs.any? %>
 ## 🐛 Bug Fixes
 <% bug_prs.each do |pr| -%>
-<%= pr.to_checklist_item %>
+- #<%= pr.number %> <%= pr.mention %>
 <% end -%>
 <% end %>
 <% documentation_prs = pull_requests.select { |pr| pr.labels.include?('documentation') } %>
 <% if documentation_prs.any? %>
 ## 📚 Documentation
 <% documentation_prs.each do |pr| -%>
-<%= pr.to_checklist_item %>
+- #<%= pr.number %> <%= pr.mention %>
 <% end -%>
 <% end %>
