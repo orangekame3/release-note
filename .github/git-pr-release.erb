@@ -1,0 +1,26 @@
+Release <%= Time.now.strftime('%Y-%m-%d %H:%M') %>
+
+> [!CAUTION]
+> **Create Merge Commit** is recommended for merge this PR.
+
+<% enhancement_prs = pull_requests.select { |pr| pr.labels.include?('enhancement') } %>
+<% if enhancement_prs.any? %>
+## 🚀 Enhancement
+<% enhancement_prs.each do |pr| -%>
+- #<%= pr.number %> <%= pr.mention %>
+<% end -%>
+<% end %>
+<% bug_prs = pull_requests.select { |pr| pr.labels.include?('bug') } %>
+<% if bug_prs.any? %>
+## 🐛 Bug Fixes
+<% bug_prs.each do |pr| -%>
+- #<%= pr.number %> <%= pr.mention %>
+<% end -%>
+<% end %>
+<% docs_prs = pull_requests.select { |pr| pr.labels.include?('documentation') } %>
+<% if docs_prs.any? %>
+## 📚 Documentation
+<% docs_prs.each do |pr| -%>
+- #<%= pr.number %> <%= pr.mention %>
+<% end -%>
+<% end %>
