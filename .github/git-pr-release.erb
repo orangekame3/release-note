@@ -1,17 +1,8 @@
 Release <%= Time.now.strftime('%Y-%m-%d %H:%M') %>
-<<<<<<< HEAD
 <% features_prs = pull_requests.select { |pr| pr.labels.include?('features') } %>
 <% if features_prs.any? %>
 ## 🚀 Features
 <% features_prs.each do |pr| -%>
-=======
-> [!CAUTION]
-> **Create Merge Commit** is recommended for merge this PR.
-<% enhancement_prs = pull_requests.select { |pr| pr.labels.include?('enhancement') } %>
-<% if enhancement_prs.any? %>
-## 🚀 Enhancement
-<% enhancement_prs.each do |pr| -%>
->>>>>>> develop
 <%= pr.to_checklist_item %>
 <% end -%>
 <% end %>
@@ -27,3 +18,5 @@ Release <%= Time.now.strftime('%Y-%m-%d %H:%M') %>
 ## 🧰 Maintenance
 <% maintenance_prs.each do |pr| -%>
 <%= pr.to_checklist_item %>
+<% end -%>
+<% end %>
