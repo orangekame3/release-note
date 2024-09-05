@@ -1,2 +1,3 @@
 # release-note
-aaa
+
+## 1.0.0
